@@ -9,7 +9,12 @@ class VolumeOfCrash():
         if len(VolumeData) == 6:
             VolumeDataDict = dict(zip(['P1', 'V', 'q', 'T', 'P2', 'rL'], VolumeData))
         else:
+<<<<<<< HEAD
             VolumeDataDict = {'ERROR: ': "BASE DATA PATTERN DON'T MATCH"}
+=======
+            print('Base Data Error')
+            VolumeDataDict = {'P1': 50.0, 'V': 30.0, 'q': 22.0, 'T': 246.0, 'P2': 134.0, 'rL': [468.0, 26.0, 468.0]}
+>>>>>>> 13dc8d0e6c4645e411cf661129ee724a3d7a1ff5
         return(VolumeDataDict)
     def CalculateVolumeOfCrash(self, VolumeDataDict):
         if len(VolumeDataDict) == 6 and type(VolumeDataDict) == dict:
