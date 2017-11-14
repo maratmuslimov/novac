@@ -1,5 +1,8 @@
-var zmq = require('zmq')
-  , sock = zmq.socket('pull');
+var zerorpc = require("zerorpc");
 
-sock.connect('tcp://127.0.0.1:5556');
-console.log('Worker connected to port 3000');
+var client = new zerorpc.Client();
+client.connect("tcp://127.0.0.1:4242");
+
+client.invoke("streaming_range", document.getElementById("text").value, function(error, res, more) {
+    console.log(res);
+});

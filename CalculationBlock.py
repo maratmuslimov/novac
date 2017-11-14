@@ -10,7 +10,7 @@ class VolumeOfCrash():
             VolumeDataDict = dict(zip(['P1', 'V', 'q', 'T', 'P2', 'rL'], VolumeData))
         else:
             print('Base Data Error')
-            VolumeDataDict = {'ERROR: ': Base Data Error}
+            VolumeDataDict = {'P1': 50.0, 'V': 30.0, 'q': 22.0, 'T': 246.0, 'P2': 134.0, 'rL': [468.0, 26.0, 468.0]}
         return(VolumeDataDict)
     def CalculateVolumeOfCrash(self, VolumeDataDict):
         print(type(VolumeDataDict))
