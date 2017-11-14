@@ -9,26 +9,27 @@ class VolumeOfCrash():
         if len(VolumeData) == 6:
             VolumeDataDict = dict(zip(['P1', 'V', 'q', 'T', 'P2', 'rL'], VolumeData))
         else:
-            print('Base Data Error')
-            VolumeDataDict = {'ERROR: ': Base Data Error}
+            VolumeDataDict = {'ERROR: ': "BASE DATA PATTERN DON'T MATCH"}
         return(VolumeDataDict)
     def CalculateVolumeOfCrash(self, VolumeDataDict):
-        print(type(VolumeDataDict))
-        for key in VolumeDataDict:
-            if type(VolumeDataDict[key]) == list:
-                ListPart = []
-                for elem in VolumeDataDict[key]:
-                    elem = elem * 2
-                    ListPart.append(elem)
-                VolumeDataDict[key] = ListPart
-            else:
-                VolumeDataDict[key] = VolumeDataDict[key] * 2
-        print(VolumeDataDict)
+        if len(VolumeDataDict) == 6 and type(VolumeDataDict) == dict:
+            for key in VolumeDataDict:
+                if type(VolumeDataDict[key]) == list:
+                    ListPart = []
+                    for elem in VolumeDataDict[key]:
+                        elem = elem * 2
+                        ListPart.append(elem)
+                    VolumeDataDict[key] = ListPart
+                else:
+                    VolumeDataDict[key] = VolumeDataDict[key] * 2
         return(VolumeDataDict)
     def TextFormerData(self, VolumeDataDict):
         message = ''
-        for key in VolumeDataDict:
-            message = message + str(key) + ' = ' + str(VolumeDataDict[key]) + '; '
+        if len(VolumeDataDict) == 1:
+            message = "BASE DATA PATTERN DON'T MATCH"
+        else:
+            for key in VolumeDataDict:
+                message = message + str(key) + ' = ' + str(VolumeDataDict[key]) + '; '
         return(message)
 
 class ListMaker():
@@ -56,8 +57,10 @@ class ListMaker():
 
 if __name__ == '__main__':
     V = ListMaker()
+    # List = V.CreateList('2435; 345; 7; 345')
+    # List = V.CreateList('123; a; 234, 13, 234; 23, 67, 87')
     # List = V.CreateList('123; a; 234, 13, 234; 165; 23, 67, 87')
-    List = V.CreateList('23; 15; 11; 123; 67; 234, 13, 234')
+    List = V.CreateList('23; 15; 11; 12; 67; 234, 13, 234')
     VolumeData = VolumeOfCrash()
     DictVD = VolumeData.makeDictVolumeData(List)
     DictCVD = VolumeData.CalculateVolumeOfCrash(DictVD)

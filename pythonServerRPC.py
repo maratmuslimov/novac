@@ -3,7 +3,6 @@ import sys
 import CalculationBlock
 
 class StreamingRPC(object):
-    @zerorpc.stream
     def streaming_range(self, text):
         message = text
         V = CalculationBlock.ListMaker()
@@ -13,7 +12,6 @@ class StreamingRPC(object):
         DictVD = VolumeData.makeDictVolumeData(List)
         DictCVD = VolumeData.CalculateVolumeOfCrash(DictVD)
         textResultCVD = VolumeData.TextFormerData(DictCVD)
-        print(textResultCVD)
         return(textResultCVD)
 
 s = zerorpc.Server(StreamingRPC())

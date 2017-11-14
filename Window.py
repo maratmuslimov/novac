@@ -23,8 +23,8 @@ class Ui_MainWindow(object):
 
         self.inputText = QtWidgets.QLineEdit(self.groupbox)
         # self.inputText.setGeometry(QtCore.QRect(15, 15, 100, 50))
-        self.inputText.setMinimumSize(QtCore.QSize(400, 50))
-        self.inputText.setMaximumSize(QtCore.QSize(500, 50))
+        self.inputText.setMinimumSize(QtCore.QSize(540, 50))
+        self.inputText.setMaximumSize(QtCore.QSize(570, 50))
         self.verticalLayout.addWidget(self.inputText)
 
         self.outputTextLable = QtWidgets.QLabel(self.groupbox)
@@ -34,8 +34,8 @@ class Ui_MainWindow(object):
 
         self.outputText = QtWidgets.QLineEdit(self.groupbox)
         # self.inputText.setGeometry(QtCore.QRect(50, 50, 100, 50))
-        self.outputText.setMinimumSize(QtCore.QSize(400, 50))
-        self.outputText.setMaximumSize(QtCore.QSize(500, 50))
+        self.outputText.setMinimumSize(QtCore.QSize(540, 50))
+        self.outputText.setMaximumSize(QtCore.QSize(570, 50))
         self.outputText.setReadOnly(True)
         self.verticalLayout.addWidget(self.outputText)
 

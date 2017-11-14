@@ -7,8 +7,7 @@ class Client():
         c = zerorpc.Client()
         c.connect("tcp://127.0.0.1:4242")
         result = c.streaming_range(text)
-        message = ''.join(result)
-        return(message)
+        return(result)
 
 app = Window.QtWidgets.QApplication(sys.argv)
 MainWindow = Window.QtWidgets.QMainWindow()
