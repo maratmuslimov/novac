@@ -3,15 +3,68 @@
   <head>
     <meta charset="UTF-8">
     <title>Novac</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
   </head>
   <body>
-    <h1>Py RPC Test</h1>
-    <input id="text" type="text" name="" value="25; 15; 11; 123; 67; 234, 13, 234">
-    <input id="result" type="text" name="" value="">
-    <div id="resultText" class="">
-      EMPTY
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+              <h4>Исходные данные для расчета объемов аварии</h4>
+              <form>
+                <div class="form-group">
+                  <label for="">Давление в аппарате Р_1 [кПа]</label>
+                  <input type="number" class="form-control" id="P_1" placeholder="">
+                </div>
+                <div class="form-group">
+                  <label for="">Объем аппарата V_ar</label>
+                  <input type="number" class="form-control" id="V_a" placeholder="">
+                </div>
+                <div class="form-group">
+                  <label for="">Расход в трубопроводе</label>
+                  <input type="number" class="form-control" id="" placeholder="">
+                </div>
+                <div class="form-group">
+                  <label for="">Время отключения</label>
+                  <input type="number" class="form-control" id="" placeholder="">
+                </div>
+                <div class="form-group">
+                  <label for="">Максимальное давление</label>
+                  <input type="number" class="form-control" id="" placeholder="">
+                </div>
+                <div class="form-group">
+                  <label for="">Количество участков</label>
+                  <input type="number" class="form-control" id="input-amount" placeholder="" value="0">
+                  <div id="inputsContainer"></div>
+                </div>
+              </form>
+            </div>
+            <div class="col-sm-6">
+              <h4>Результаты расчета объемов аварии</h4>
+              <form>
+                <div class="form-group">
+                  <label for="">Объем вещества в аппарате V_a [м3]</label>
+                  <input type="text" class="form-control" id="" placeholder="">
+                </div>
+                <div class="form-group">
+                  <label for="">Объем вещества</label>
+                  <input type="text" class="form-control" id="" placeholder="">
+                </div>
+                <div class="form-group">
+                  <label for="">Объем паровой фазы</label>
+                  <input type="text" class="form-control" id="" placeholder="">
+                </div>
+                <div class="form-group">
+                  <label for="">Объем паровой фазы</label>
+                  <input type="text" class="form-control" id="" placeholder="">
+                </div>
+                <div class="form-group">
+                  <label for="">Объем паровой фазы при аварии V_ав [м3]</label>
+                  <input type="text" class="form-control" id="" placeholder="">
+                </div>
+              </form>
+            </div>
+        </div>
     </div>
-    <button type="button" name="button" onclick="calc()">GET</button>
   </body>
 
   <script>
