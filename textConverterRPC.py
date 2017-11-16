@@ -1,6 +1,7 @@
 import Window
 import zerorpc
 import sys
+import json
 
 class Client():
     def createClient(self, text):
@@ -20,7 +21,8 @@ def sendText():
     c = client.createClient(text)
     ui.outputText.setText(c)
 
-ui.inputText.setText('25; 15; 11; 123; 67; 234, 13, 234')
+t = '{"P_1": 50.0, "V": 5.0, "q": 1.5, "T": 120.0, "P_2": 50.0, "dL": [0.024, 6.0, 0.024, 6.0]}'
+ui.inputText.setText(t)
 ui.inputText.editingFinished.connect(sendText)
 MainWindow.show()
 sys.exit(app.exec_())
