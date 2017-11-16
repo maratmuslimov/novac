@@ -8,6 +8,17 @@ var text = document.getElementById("text");
 var resultText = document.getElementById("resultText");
 var inputAmount = document.getElementById("input-amount");
 
+
+// inputs start
+
+var P_1 = document.getElementById("P_1");
+var V_ap = document.getElementById("V_ap");
+var q = document.getElementById("q");
+var T = document.getElementById("T");
+var P_2 = document.getElementById("P_2");
+
+//inputs end
+
 // client.invoke("streaming_range", document.getElementById("text").value, function(error, res, more) {
 //     console.log(res);
 // });
@@ -20,7 +31,17 @@ calc = function() {
   })
 };
 
-function addInputs(){
+getInputsValue = function() {
+  console.log("{" +
+  '"' + P_1.name + '"' + ":" , P_1.value + ",",
+  '"' + V_ap.name + '"' + ":" , V_ap.value + ",",
+  '"' + q.name + '"' + ":" , q.value + ",",
+  '"' + T.name + '"' + ":" , T.value + ",",
+  '"' + P_2.name + '"' + ":" , P_2.value +
+  "}");
+}
+
+function addInputs() {
   var number = inputAmount.value;
   var container = document.getElementById("inputsContainer");
   while (container.hasChildNodes()) {

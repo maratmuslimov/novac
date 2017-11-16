@@ -13,28 +13,31 @@
               <form>
                 <div class="form-group">
                   <label for="">Давление в аппарате Р_1 [кПа]</label>
-                  <input type="number" class="form-control" id="P_1" placeholder="">
+                  <input type="number" class="form-control" id="P_1" name="P_1" value="50.0" placeholder="">
                 </div>
                 <div class="form-group">
-                  <label for="">Объем аппарата V_ar</label>
-                  <input type="number" class="form-control" id="V_a" placeholder="">
+                  <label for="">Объем аппарата V_ап</label>
+                  <input type="number" class="form-control" id="V_ap" name="V_ap" value="5.0" placeholder="">
                 </div>
                 <div class="form-group">
                   <label for="">Расход в трубопроводе</label>
-                  <input type="number" class="form-control" id="" placeholder="">
+                  <input type="number" class="form-control" id="q" name="q" value="1.5" placeholder="">
                 </div>
                 <div class="form-group">
                   <label for="">Время отключения</label>
-                  <input type="number" class="form-control" id="" placeholder="">
+                  <input type="number" class="form-control" id="T" name="T" value="120.0" placeholder="">
                 </div>
                 <div class="form-group">
                   <label for="">Максимальное давление</label>
-                  <input type="number" class="form-control" id="" placeholder="">
+                  <input type="number" class="form-control" id="P_2" name="P_2" value="50.0" placeholder="">
                 </div>
                 <div class="form-group">
                   <label for="">Количество участков</label>
-                  <input type="number" class="form-control" id="input-amount" placeholder="" value="0">
+                  <input type="number" class="form-control" id="input-amount" name="P_1" placeholder="" value="0">
                   <div id="inputsContainer"></div>
+                </div>
+                <div class="form-group">
+                  <button type="button" name="button" onclick="getInputsValue()">Расчитать</button>
                 </div>
               </form>
             </div>
@@ -43,23 +46,23 @@
               <form>
                 <div class="form-group">
                   <label for="">Объем вещества в аппарате V_a [м3]</label>
-                  <input type="text" class="form-control" id="" placeholder="">
+                  <input type="text" class="form-control" id="" placeholder="" disabled="">
                 </div>
                 <div class="form-group">
                   <label for="">Объем вещества</label>
-                  <input type="text" class="form-control" id="" placeholder="">
+                  <input type="text" class="form-control" id="" placeholder="" disabled="">
                 </div>
                 <div class="form-group">
                   <label for="">Объем паровой фазы</label>
-                  <input type="text" class="form-control" id="" placeholder="">
+                  <input type="text" class="form-control" id="" placeholder="" disabled="">
                 </div>
                 <div class="form-group">
                   <label for="">Объем паровой фазы</label>
-                  <input type="text" class="form-control" id="" placeholder="">
+                  <input type="text" class="form-control" id="" placeholder="" disabled="">
                 </div>
                 <div class="form-group">
                   <label for="">Объем паровой фазы при аварии V_ав [м3]</label>
-                  <input type="text" class="form-control" id="" placeholder="">
+                  <input type="text" class="form-control" id="" placeholder="" disabled="">
                 </div>
               </form>
             </div>
