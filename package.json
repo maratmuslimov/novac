@@ -21,6 +21,7 @@
     "electron-rebuild": "^1.6.0"
   },
   "dependencies": {
+    "bootstrap": "^3.3.7",
     "zerorpc": "^0.9.7",
     "zmq": "^2.15.3"
   }
