@@ -1,0 +1,15 @@
+.block {
+
+}
+.w2ui-field input {
+    width: 100px;
+    text-align: right;
+}
+.w2ui-field > div > span {
+    margin-left: 20px;
+}
+
+body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}

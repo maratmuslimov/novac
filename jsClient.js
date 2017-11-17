@@ -35,15 +35,25 @@ calc = function() {
 };
 
 getInputsValue = function() {
-  text = "{" +
-  '"' + P_1.name + '"' + ":" + " " + P_1.value + "," +
-  '"' + V_ap.name + '"' + ":" + " " + V_ap.value + "," +
-  '"' + q.name + '"' + ":" + " " + q.value + "," +
-  '"' + T.name + '"' + ":" + " " + T.value + "," +
-  '"' + P_2.name + '"' + ":" + " " + P_2.value +
+  // text = "{" +
+  // '"' + P_1.name + '"' + ":" + " " + P_1.value + "," +
+  // '"' + V_ap.name + '"' + ":" + " " + V_ap.value + "," +
+  // '"' + q.name + '"' + ":" + " " + q.value + "," +
+  // '"' + T.name + '"' + ":" + " " + T.value + "," +
+  // '"' + P_2.name + '"' + ":" + " " + P_2.value +
+  // "}";
+  basedata = "{" +
+  '"' + P_0.name + '"' + ":" + " " + P_0.value + "," +
+  '"' + Z.name + '"' + ":" + " " + Z.value + "," +
+  '"' + C_nkpr.name + '"' + ":" + " " + C_nkpr.value + "," +
+  '"' + Q_sg.name + '"' + ":" + " " + Q_sg.value + "," +
+  '"' + r.name + '"' + ":" + " " + r.value + "," +
+  '"' + t_vsp.name + '"' + ":" + " " + t_vsp.value + "," +
+  '"' + M.name + '"' + ":" + " " + M.value + "," +
+  '"' + t_r.name + '"' + ":" + " " + t_r.value + 
   "}";
-  return text;
-  //console.log(text);
+  console.log(basedata);
+  return basedata;
 }
 
 function addInputs() {
@@ -61,7 +71,7 @@ function addInputs() {
       }
 }
 
-inputAmount.addEventListener("input", addInputs);
+//inputAmount.addEventListener("input", addInputs);
 
 //
 // var zerorpc = require("zerorpc");
