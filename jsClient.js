@@ -24,21 +24,26 @@ var P_2 = document.getElementById("P_2");
 // });
 
 calc = function() {
-  client.invoke("streaming_range", text.value, function(error, res, more) {
+  client.invoke("streaming_range", getInputsValue(), function(error, res, more) {
     console.log(res);
-    resultText.innerHTML = res;
-    result = res;
-  })
+    resultt = JSON.parse(res);
+    console.log(resultt);
+    for (var key in resultt) {
+      document.getElementById(key).value = resultt[key];
+    }
+  });
 };
 
 getInputsValue = function() {
-  console.log("{" +
-  '"' + P_1.name + '"' + ":" , P_1.value + ",",
-  '"' + V_ap.name + '"' + ":" , V_ap.value + ",",
-  '"' + q.name + '"' + ":" , q.value + ",",
-  '"' + T.name + '"' + ":" , T.value + ",",
-  '"' + P_2.name + '"' + ":" , P_2.value +
-  "}");
+  text = "{" +
+  '"' + P_1.name + '"' + ":" + " " + P_1.value + "," +
+  '"' + V_ap.name + '"' + ":" + " " + V_ap.value + "," +
+  '"' + q.name + '"' + ":" + " " + q.value + "," +
+  '"' + T.name + '"' + ":" + " " + T.value + "," +
+  '"' + P_2.name + '"' + ":" + " " + P_2.value +
+  "}";
+  return text;
+  //console.log(text);
 }
 
 function addInputs() {
