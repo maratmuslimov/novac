@@ -61,4 +61,6 @@ class CalcVolumeOfCrash():
 if __name__ == '__main__':
     t = '{"P_1": 50.0, "V_ap": 5.0, "q": 1.5, "T": 120.0, "P_2": 50.0, "dL": [0.024, 6.0, 0.024, 6.0]}'
     Dict = TextConvertor().jTextToDict(t)
+    D = TextConvertor().TextToDict(t)
+    print(D)
     Volume = CalcVolumeOfCrash().calcVolume(Dict)
