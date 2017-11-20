@@ -1,15 +1,13 @@
 import zerorpc
 import os.path
-import CalculationBlock
-import json
 import treatmentOfData
+# import json
 
 class StreamingRPC(object):
     def streaming_range(self, text):
-        Dict = CalculationBlock.TextConvertor().jTextToDict(text)
-        # Volume = CalculationBlock.CalcVolumeOfCrash().calcVolume(Dict)
+        Dict = treatmentOfData.TextConvertor().jTextToDict(text)
         calcData = treatmentOfData.MethodChoice(Dict)
-        result = CalculationBlock.TextConvertor().DictTojText(calcData)
+        result = treatmentOfData.TextConvertor().DictTojText(calcData)
         return(result)
 
 s = zerorpc.Server(StreamingRPC())
