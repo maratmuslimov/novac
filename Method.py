@@ -12,9 +12,6 @@ locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
 def getpreferredencoding(do_setlocale = True):
     return "utf-8"
 locale.getpreferredencoding = getpreferredencoding
-print(sys.getdefaultencoding())
-print(locale.getpreferredencoding())
-print(sys.stdout.encoding)
 
 # Общие для каждого объекта методы.
 class CommonMethods():

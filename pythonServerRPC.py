@@ -8,6 +8,7 @@ class StreamingRPC(object):
         Dict = treatmentOfData.TextConvertor().jTextToDict(text)
         calcData = treatmentOfData.MethodChoice(Dict)
         result = treatmentOfData.TextConvertor().DictTojText(calcData)
+        print(result)
         return(result)
 
 s = zerorpc.Server(StreamingRPC())
