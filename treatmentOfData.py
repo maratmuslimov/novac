@@ -4,8 +4,8 @@ import Method
 
 def MethodChoice(Dict):
     if Dict['calcObject'] == 'EG':
-        print('EG')
         result = Method.EG().calc(Dict)
+        print(result)
         return(result)
     if Dict['calcObject'] == EMG:
         print('EMG')
@@ -43,6 +43,6 @@ def MethodChoice(Dict):
     return(Result)
 
 if __name__ == '__main__':
-    D = {'q': 1.5, 'T': 120.0, 'V_ap': 5.0, 'P_2': 50.0, 'P_1': 50.0, 't_r': 50.0, 'M': 7.0, 'Q_sg': 40.0, 'Z': 0.1, 'r': 30.0, 'calcObject': 'EG'}
-
-    calcData = MethodChoice(D)
+    D = {'C_nkpr': 16, 't_vsp': 16, 'q': 1.5, 'T': 120.0, 'V_ap': 5.0, 'P_2': 50.0, 'P_1': 50.0, 't_r': 50.0, 'M': 7.0, 'Q_sg': 40.0, 'Z': 0.1, 'r': 30.0, 'calcObject': 'EG'}
+    f = MethodChoice(D)
+    print(f)

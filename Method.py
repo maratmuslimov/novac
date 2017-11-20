@@ -1,6 +1,23 @@
-# -*- coding: UTF-8 -*-
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# vim:fileencoding=utf-8
 """ Module of Methods """
 import sys
+import CalculationBlock
+
+import locale
+import codecs
+
+# codecs.encode(sys.stdout, encoding='utf-8', errors='UnicodeEncodeError')
+# sys.stdout = codecs.getwriter("utf-8")(sys.stdout)
+# sys.stdout.encoding
+# sys.stdout = codecs.getwriter(sys.stdout.encoding='UTF-8')(sys.stdout)
+#
+# # locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
+
+print(sys.getdefaultencoding())
+print(locale.getpreferredencoding())
+print(sys.stdout.encoding)
 
 # Общие для каждого объекта методы.
 class CommonMethods():
@@ -80,13 +97,30 @@ class CommonMethods():
         result = dict(zip(['alpha', 'F', 'd', 'Re', 'm_sug'], [alpha, F, d, Re, m_sug]))
         return(result)
 
+    def calcCatForE(self, dataDict, P_vzr, R_nkpr):
+        BD = dataDict
+        if P_vzr > 5 or R_nkpr > 30:
+            if BD['t_vsp'] > 28:
+                category = "А"
+            else:
+                category = "Б"
+        else:
+            category = "В"
+        return(category)
+
+
+""" КЛАСС ОБЪЕКТОВ """
+
 class EG(CommonMethods):
     def calc(self, Dict):
         V = CommonMethods().calcVolume(Dict)
         p = CommonMethods().calcDensity(Dict)
         m = CommonMethods().calcMass(p = p, V = V['V_av'])
+        R_nkpr = CommonMethods().calcRforG(dataDict = Dict, m = m, p = p)
         P = CommonMethods().calcPressureForEquipment(dataDict = Dict, m = m)
-        calcData = dict(zip(['p', 'm'], [p, m]))
+        cat = CommonMethods().calcCatForE(dataDict = Dict, P_vzr = P['P_vzr'], R_nkpr = R_nkpr)
+        # print(cat)
+        calcData = dict(zip(['p', 'm', 'R_nkpr', 'cat'], [p, m, R_nkpr, cat]))
         calcData.update(P)
         print(V)
         calcData.update(V)
@@ -149,6 +183,10 @@ if __name__ == '__main__':
     # R = EG().calc(D)
     # print(R)
 
-    D = {'q': 1.5, 'T': 120.0, 'V_ap': 5.0, 'P_2': 50.0, 'P_1': 50.0, 't_r': 50.0, 'M': 7.0, 'Q_sg': 40.0, 'Z': 0.1, 'r': 30.0, 'calcObject': 'EG'}
+    D = {'C_nkpr': 16, 't_vsp': 16, 'q': 1.5, 'T': 120.0, 'V_ap': 5.0, 'P_2': 50.0, 'P_1': 50.0, 't_r': 50.0, 'M': 7.0, 'Q_sg': 40.0, 'Z': 0.1, 'r': 30.0, 'calcObject': 'EG'}
+    bd = CalculationBlock.TextConvertor().DictTojText(D)
+    print(bd)
     R = EG().calc(D)
+    res = CalculationBlock.TextConvertor().DictTojText(R)
+    print(res)
     print(R)
